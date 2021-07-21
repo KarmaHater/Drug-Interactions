@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import data from "../interactions.json";
 
 const initialState = {
-  drugs: {},
+  results: [],
 };
 
 export const drugInteractionsSlice = createSlice({
@@ -10,7 +10,7 @@ export const drugInteractionsSlice = createSlice({
   initialState,
   reducers: {
     fetchDrugInteractions: (state) => {
-      console.log({ state, data });
+      state.results = data;
     },
   },
 });

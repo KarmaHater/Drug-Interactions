@@ -1,8 +1,17 @@
 import React, { useCallback, useState } from "react";
 import PropTypes from "prop-types";
 
-const TextArea = ({ buttonText, handleOnSubmit, rows, cols, maxLength }) => {
+const TextArea = ({
+  buttonText,
+  handleOnSubmit,
+  rows,
+  cols,
+  maxLength,
+  hasError,
+  errorMessage,
+}) => {
   const [textAreaState, setTextAreaState] = useState({ value: "" });
+  const [error, setError] = useState(false);
 
   const handleChangeCB = useCallback((event) => {
     setTextAreaState({ value: event.target.value });
@@ -11,24 +20,33 @@ const TextArea = ({ buttonText, handleOnSubmit, rows, cols, maxLength }) => {
   const handleOnSubmitCB = useCallback(
     (e) => {
       e.preventDefault();
-      handleOnSubmit({ value: textAreaState.value });
+
+      if (hasError(textAreaState.value)) {
+        setError(true);
+      } else {
+        setError(false);
+        handleOnSubmit({ value: textAreaState.value });
+      }
     },
-    [handleOnSubmit, textAreaState]
+    [handleOnSubmit, textAreaState, hasError]
   );
 
   return (
-    <form>
-      <textarea
-        value={textAreaState.value}
-        onChange={handleChangeCB}
-        rows={rows}
-        cols={cols}
-        maxLength={maxLength}
-      />
-      <div>
-        <input type="submit" value={buttonText} onClick={handleOnSubmitCB} />
-      </div>
-    </form>
+    <div>
+      {error && <div>{errorMessage}</div>}
+      <form>
+        <textarea
+          value={textAreaState.value}
+          onChange={handleChangeCB}
+          rows={rows}
+          cols={cols}
+          maxLength={maxLength}
+        />
+        <div>
+          <input type="submit" value={buttonText} onClick={handleOnSubmitCB} />
+        </div>
+      </form>
+    </div>
   );
 };
 
@@ -43,7 +61,9 @@ TextArea.propTypes = {
   cols: PropTypes.string,
   maxLength: PropTypes.string,
   buttonText: PropTypes.string.isRequired,
+  errorMessage: PropTypes.string.isRequired,
   handleOnSubmit: PropTypes.func.isRequired,
+  hasError: PropTypes.func.isRequired,
 };
 
 export default TextArea;
