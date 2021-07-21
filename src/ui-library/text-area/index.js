@@ -1,21 +1,19 @@
 import React, { useCallback, useState } from "react";
 import PropTypes from "prop-types";
 
-const TextArea = ({ buttonText, onSubmitCallback, rows, cols }) => {
+const TextArea = ({ buttonText, handleOnSubmit, rows, cols, maxLength }) => {
   const [textAreaState, setTextAreaState] = useState({ value: "" });
 
-  const handleChangeCB = useCallback(({ target }) => {
-    console.log({ target });
-    /// can state method here
-    setTextAreaState({ value: target.value });
+  const handleChangeCB = useCallback((event) => {
+    setTextAreaState({ value: event.target.value });
   }, []);
 
-  const handleSubmitCB = useCallback(
-    ({ target }) => {
-      console.log("SUBMITTED FORM");
-      onSubmitCallback({ target });
+  const handleOnSubmitCB = useCallback(
+    (e) => {
+      e.preventDefault();
+      handleOnSubmit({ value: textAreaState.value });
     },
-    [onSubmitCallback]
+    [handleOnSubmit, textAreaState]
   );
 
   return (
@@ -25,24 +23,27 @@ const TextArea = ({ buttonText, onSubmitCallback, rows, cols }) => {
         onChange={handleChangeCB}
         rows={rows}
         cols={cols}
+        maxLength={maxLength}
       />
       <div>
-        <input type="submit" value={buttonText} onClick={handleSubmitCB} />
+        <input type="submit" value={buttonText} onClick={handleOnSubmitCB} />
       </div>
     </form>
   );
 };
 
 TextArea.defaultProps = {
-  rows: "10",
-  cols: "50",
+  rows: "20",
+  cols: "105",
+  maxLength: "50000",
 };
 
 TextArea.propTypes = {
   rows: PropTypes.string,
   cols: PropTypes.string,
+  maxLength: PropTypes.string,
   buttonText: PropTypes.string.isRequired,
-  onSubmitCallback: PropTypes.func.isRequired,
+  handleOnSubmit: PropTypes.func.isRequired,
 };
 
 export default TextArea;
