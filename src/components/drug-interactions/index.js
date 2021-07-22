@@ -10,9 +10,9 @@ import Title from "../../ui-library/title";
       1. I don't think JS should ever be counting words. It is a dead giveaway that the design should be reworked a little.
       2. Doing these types of validations with JS will hurt performance. 
       3. I made it a little better by running this validation only on submit. 
-      4. I added an error message to help the user a little help, but I honestly don't think it is enough.
+      4. I added an error message to help the user a little, but I honestly don't think it is enough.
       5. With this type of design, it is hard for the user to see what line has the error and makes it impossible to debug. Mainly because you can have 10,000 lines. 
-      6. I could have my done with the Keyup Event or any time the user pressed the space bar but I don't like that solution either. 
+      6. I could have done with the Keyup Event or every time the user pressed the space bar. I don't like these solution either. 
   */
 const normalizedInput = (input) =>
   input.split("\n").map((row) => row.split(" ").filter((word) => word !== ""));
