@@ -20,12 +20,13 @@ const TextArea = ({
   const handleOnSubmitCB = useCallback(
     (e) => {
       e.preventDefault();
-
-      if (hasError(textAreaState.value)) {
-        setError(true);
-      } else {
-        setError(false);
-        handleOnSubmit({ value: textAreaState.value });
+      if (textAreaState.value) {
+        if (hasError(textAreaState.value)) {
+          setError(true);
+        } else {
+          setError(false);
+          handleOnSubmit({ value: textAreaState.value });
+        }
       }
     },
     [handleOnSubmit, textAreaState, hasError]
@@ -53,6 +54,10 @@ const TextArea = ({
 TextArea.defaultProps = {
   rows: "20",
   cols: "105",
+  /*
+  Side Note: 
+   I honestly don't believe we should be using JS to limit the amount of lines a user can add. I decided to solve it using maxLength instead. There is, however, a drawback. It will fail silently for the user and not give any feedback as to why a user can't add more text. 50,0000 in the average char in 10,000 lines.
+  */
   maxLength: "50000",
 };
 

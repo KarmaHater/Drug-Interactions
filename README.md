@@ -30,7 +30,7 @@ This project was only made for development and not hosted anywhere.
 I wanted to keep this project simple. I believe you should not add any tech lib without having a good reason. This is why you will not find that many external libs in this project.
 
 1. **React:** Flexible, easy way to build complex UIs. I love it!
-2. **Redux:** This project is straightforward and, in my opinion, does not need Redux or any complex state management lib. I could have accomplished the same thing with Conext/ Provider. My only reasoning for adding it was because the recruiter said you use it in-house. I wanted to learn something new, which is why I choose to use [redux-toolkit](https://redux-toolkit.js.org/tutorials/quick-start). I found myself liking it a lot. First, it cuts down on annoying boilerplate and takes care of immutability for you. I'm going to start this project on Github :)
+2. **Redux:** This project is straightforward and, in my opinion, does not need Redux or any complex state management lib. I could have accomplished the same thing with Context/ Provider. My only reasoning for adding it was because the recruiter said you use it in-house. I wanted to learn something new, which is why I choose to use [redux-toolkit](https://redux-toolkit.js.org/tutorials/quick-start). I found myself liking it a lot. First, it cuts down on annoying boilerplate and takes care of immutability for you. I'm going to start this project on Github :)
 
 ---
 
@@ -38,5 +38,5 @@ I wanted to keep this project simple. I believe you should not add any tech lib 
 
 As you know, we only have some much time in a day. I Left the following topic, but I think they are essential and would had made the project stronger.
 
-1. **Testing:** I would have used Jest. I would have tested everything in the utils folder and UI-lib. I might not have tasted anything in the components folders because UIs are constantly changing. Ultimately, this is a team/business decision if those components get tested or not.
+1. **Testing:** I would have added more tests. I would have tested everything in the utils folder and UI-lib. I might not have tested anything in the components folders because UIs are constantly changing. Ultimately, this is a team/business decision if those components get tested or not.
 2. **Css:** I'm a big fan of CSS in JS. I like writing in the same language, and I love creating logic in your CSS objects. In the end, I would have used Emotion.

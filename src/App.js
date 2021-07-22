@@ -9,7 +9,7 @@ function App() {
   const results = useSelector(
     ({ drugInteractions }) => drugInteractions.results
   );
-  console.log(results);
+
   return (
     <div className="App">
       <DrugInteractionsForm />
@@ -17,8 +17,8 @@ function App() {
         <Title title="Enter Interactions" />
         {results.map((r) => (
           <div>
-            <Caption text={`${r.severity.toUpperCase()}: `} />{" "}
-            <span>{r.description}</span>
+            {r[0] && <Caption text={`${r[0].toUpperCase()}: `} />}
+            <span>{r[1]}</span>
           </div>
         ))}
       </div>

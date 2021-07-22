@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import data from "../interactions.json";
+import { getDrugMostServerInteractions } from "../utils/get-drug-interactions";
 
 const initialState = {
   results: [],
@@ -9,8 +9,8 @@ export const drugInteractionsSlice = createSlice({
   name: "Drug Interactions",
   initialState,
   reducers: {
-    fetchDrugInteractions: (state) => {
-      state.results = data;
+    fetchDrugInteractions: (state, { payload }) => {
+      state.results = getDrugMostServerInteractions(payload);
     },
   },
 });
