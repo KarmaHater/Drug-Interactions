@@ -51,22 +51,3 @@ export const getDrugMostServerInteractions = (drugsCollections) => {
   });
   return finalResult;
 };
-
-/*
-  
-
-  2. If there are multiple interactions for input, return the most severe interaction. 
-  
-  3. If there are multiple interactions of the same severity, the program should return the interaction that appears first.
-
-  4. Each line of input should generate a line of output in the same order, and with the following format: {SEVERITY}: {interaction message}
-
-  Input:
-     sildenafil tamsulosin valaciclovir 
-     sildenafil ibuprofen
-     valaciclovir doxepin ticlopidine ibuprofen
-  Output:
-     MODERATE: Sildenafil may potentiate the hypotensive effect of alpha blockers, resulting in symptomatic hypotension in some patients.
-    No interaction
-    MAJOR: Valaciclovir may decrease the excretion rate of Doxepin which could result in a higher serum level.
-  */
