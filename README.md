@@ -30,7 +30,7 @@ This project was only made for development and not hosted anywhere.
 I wanted to keep this project simple. I believe you should not add any tech lib without having a good reason. This is why you will not find that many external libs in this project.
 
 1. **React:** Flexible, easy way to build complex UIs. I love it!
-2. **Redux:** This project is straightforward and, in my opinion, does not need Redux or any complex state management lib. I could have accomplished the same thing with Context/ Provider. My only reasoning for adding it was because the recruiter said you use it in-house. I wanted to learn something new, which is why I choose to use [redux-toolkit](https://redux-toolkit.js.org/tutorials/quick-start). I found myself liking it a lot. First, it cuts down on annoying boilerplate and takes care of immutability for you. I'm going to start this project on Github :)
+2. **Redux:** This project is straightforward and, in my opinion, does not need Redux or any complex state management lib. I could have accomplished the same thing with Context/ Provider. My only reasoning for adding it was because the recruiter said you use it in-house. I wanted to learn something new, which is why I choose to use [redux-toolkit](https://redux-toolkit.js.org/tutorials/quick-start). I found myself liking it a lot. First, it cuts down on annoying boilerplate and takes care of immutability for you. I'm going to star this project on Github :)
 
 ---
 
