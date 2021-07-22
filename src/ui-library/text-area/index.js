@@ -20,13 +20,13 @@ const TextArea = ({
   const handleOnSubmitCB = useCallback(
     (e) => {
       e.preventDefault();
-      if (textAreaState.value) {
-        if (hasError(textAreaState.value)) {
-          setError(true);
-        } else {
-          setError(false);
-          handleOnSubmit({ value: textAreaState.value });
-        }
+      if (!textAreaState.value) return;
+
+      if (hasError(textAreaState.value)) {
+        setError(true);
+      } else {
+        setError(false);
+        handleOnSubmit({ value: textAreaState.value });
       }
     },
     [handleOnSubmit, textAreaState, hasError]

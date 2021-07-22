@@ -36,7 +36,7 @@ I wanted to keep this project simple. I believe you should not add any tech lib 
 
 ### What I would have done if I had more time
 
-As you know, we only have some much time in a day. I Left the following topic, but I think they are essential and would had made the project stronger.
+As you know, we only have some much time in a day. I left the following topics out, but I think they are essential and would had made the project stronger.
 
 1. **Testing:** I would have added more tests. I would have tested everything in the utils folder and UI-lib. I might not have tested anything in the components folders because UIs are constantly changing. Ultimately, this is a team/business decision if those components get tested or not.
-2. **Css:** I'm a big fan of CSS in JS. I like writing in the same language, and I love creating logic in your CSS objects. In the end, I would have used Emotion.
+2. **Css:** I'm a big fan of CSS in JS. I like writing in the same language, and I love creating logic in CSS objects. In the end, I would have used Emotion.
